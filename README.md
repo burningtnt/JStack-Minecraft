@@ -13,4 +13,4 @@ JStack Minecraft: An analysis tool specially developed for Minecraft: Java Editi
 
 ### Download
 * KOOK: <https://img.kookapp.cn/attachments/2023-02/18/63f08f7511eef.zip>
-* Github: <https://github.com/burningtnt/JStack-Minecraft/blob/main/release/Jstack Minecraft v3.zip>
+* Github: <https://github.com/burningtnt/JStack-Minecraft/blob/main/release/Jstack%20Minecraft%20v3.zip>
