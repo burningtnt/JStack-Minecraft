@@ -1,6 +1,7 @@
-### JStack Minecraft: An analysis tool specially developed for Minecraft: Java Edition
+JStack Minecraft: An analysis tool specially developed for Minecraft: Java Edition
+=================
 
-Language: [zh-CN](https://github.com/burningtnt/JStack-Minecraft/blob/main/README_zh-CN.md) **en-EN**
+**Language**: [zh-CN](https://github.com/burningtnt/JStack-Minecraft/blob/main/README_zh-CN.md) **en-EN**
 
 **Jstack Minecraft** is an analysis tool specially developed for **Minecraft: Java Edition**. It can generate a snapshot of the game running stack so that the crash analyst can find the cause of your game card death more quickly.
 
