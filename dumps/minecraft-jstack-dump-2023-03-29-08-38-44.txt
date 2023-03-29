@@ -1,0 +1,855 @@
+Minecraft JStack Dump at [2023:03:29:08:38:44]
+
+2023-03-29 20:38:45
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000024e402c0, length=12, elements={
+0x00000000002ee5c0, 0x0000000023106810, 0x0000000023109290, 0x0000000023122490,
+0x0000000023123010, 0x0000000023128490, 0x000000002312ce10, 0x00000000235bdb90,
+0x00000000235bf100, 0x00000000235d11c0, 0x00000000236da950, 0x0000000024ca8710
+}
+
+"main" #1 prio=5 os_prio=0 cpu=3291.62ms elapsed=15.37s allocated=131M defined_classes=2586 tid=0x00000000002ee5c0 nid=0x1a64 runnable  [0x00000000021fe000]
+   java.lang.Thread.State: RUNNABLE
+	at org.spongepowered.asm.mixin.transformer.Config.create(Config.java:148)
+	at org.spongepowered.asm.mixin.Mixins.createConfiguration(Mixins.java:100)
+	at org.spongepowered.asm.mixin.Mixins.addConfiguration(Mixins.java:87)
+	at net.fabricmc.loader.impl.launch.FabricMixinBootstrap.init(FabricMixinBootstrap.java:93)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:153)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=15.36s allocated=0B defined_classes=0 tid=0x0000000023106810 nid=0x1074 waiting on condition  [0x000000002324f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=15.36s allocated=280B defined_classes=0 tid=0x0000000023109290 nid=0x9ac in Object.wait()  [0x00000000243ef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x0000000023122490 nid=0x680 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x0000000023123010 nid=0x1fc4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x0000000023128490 nid=0x1b58 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x000000002312ce10 nid=0x1a00 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=3010.82ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x00000000235bdb90 nid=0x1bfc waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=2 cpu=1092.01ms elapsed=15.32s allocated=19984B defined_classes=0 tid=0x00000000235bf100 nid=0x544 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #11 daemon prio=9 os_prio=2 cpu=15.60ms elapsed=15.32s allocated=0B defined_classes=0 tid=0x00000000235d11c0 nid=0x1f38 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #12 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=15.28s allocated=0B defined_classes=0 tid=0x00000000236da950 nid=0x1e98 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #13 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=15.28s allocated=0B defined_classes=0 tid=0x0000000024ca8710 nid=0xebc in Object.wait()  [0x00000000253fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.5/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.5/Thread.java:833)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.5/InnocuousThread.java:162)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 cpu=15.60ms elapsed=15.37s tid=0x00000000231028b0 nid=0x19d0 runnable  
+
+"GC Thread#0" os_prio=2 cpu=46.80ms elapsed=15.38s tid=0x0000000000337f10 nid=0x1870 runnable  
+
+"GC Thread#1" os_prio=2 cpu=46.80ms elapsed=2.00s tid=0x00000000266f1a80 nid=0x1c74 runnable  
+
+"GC Thread#2" os_prio=2 cpu=0.00ms elapsed=2.00s tid=0x00000000266f1d30 nid=0x958 runnable  
+
+"GC Thread#3" os_prio=2 cpu=46.80ms elapsed=2.00s tid=0x00000000266f3fe0 nid=0x19b0 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=15.38s tid=0x0000000000339960 nid=0x1850 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=15.38s tid=0x000000000033ae40 nid=0x1ad0 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=15.38s tid=0x00000000230a2f40 nid=0x1a34 runnable  
+
+"G1 Refine#1" os_prio=2 cpu=0.00ms elapsed=1.95s tid=0x000000002503b2f0 nid=0x1f90 runnable  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=15.38s tid=0x00000000230a4430 nid=0xa00 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=15.60ms elapsed=15.28s tid=0x0000000024ca8080 nid=0x8ac waiting on condition  
+
+JNI global refs: 16, weak refs: 0
+
+
+
+====================
+Minecraft JStack Dump at [2023:03:29:08:38:48]
+
+2023-03-29 20:38:48
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000025a9e350, length=12, elements={
+0x00000000002ee5c0, 0x0000000023106810, 0x0000000023109290, 0x0000000023122490,
+0x0000000023123010, 0x0000000023128490, 0x000000002312ce10, 0x00000000235bdb90,
+0x00000000235bf100, 0x00000000235d11c0, 0x00000000236da950, 0x0000000024ca8710
+}
+
+"main" #1 prio=5 os_prio=0 cpu=3900.03ms elapsed=18.54s allocated=155M defined_classes=2834 tid=0x00000000002ee5c0 nid=0x1a64 runnable  [0x00000000021fb000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x0000000772d370f0> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x000000077eb060f0> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:106)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getRawClassByteArray(KnotClassDelegate.java:493)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:447)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:407)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x000000077c0d09a8> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at dev.quantumfusion.dashloader.DashLoader.<init>(DashLoader.java:76)
+	at dev.quantumfusion.dashloader.DashLoader.<clinit>(DashLoader.java:52)
+	at dev.quantumfusion.dashloader.mixin.MixinPlugin.onLoad(MixinPlugin.java:15)
+	at org.spongepowered.asm.mixin.transformer.PluginHandle.onLoad(PluginHandle.java:119)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.onSelect(MixinConfig.java:709)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.selectConfigs(MixinProcessor.java:498)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.select(MixinProcessor.java:460)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.checkSelect(MixinProcessor.java:438)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:290)
+	- locked <0x000000077e1c35f8> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x000000077f811300> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at java.lang.Class.forName0(java.base@17.0.5/Native Method)
+	at java.lang.Class.forName(java.base@17.0.5/Class.java:467)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:50)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:117)
+	- locked <0x0000000772ec3970> (a net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl.getEntrypoint(EntrypointContainerImpl.java:53)
+	- locked <0x000000077f810e58> (a net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:47)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke(EntrypointUtils.java:35)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:162)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=18.52s allocated=0B defined_classes=0 tid=0x0000000023106810 nid=0x1074 waiting on condition  [0x000000002324f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=18.52s allocated=280B defined_classes=0 tid=0x0000000023109290 nid=0x9ac in Object.wait()  [0x00000000243ef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x0000000023122490 nid=0x680 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x0000000023123010 nid=0x1fc4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x0000000023128490 nid=0x1b58 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x000000002312ce10 nid=0x1a00 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=4258.83ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x00000000235bdb90 nid=0x1bfc waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=2 cpu=1388.41ms elapsed=18.47s allocated=24408B defined_classes=0 tid=0x00000000235bf100 nid=0x544 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #11 daemon prio=9 os_prio=2 cpu=15.60ms elapsed=18.47s allocated=0B defined_classes=0 tid=0x00000000235d11c0 nid=0x1f38 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #12 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=18.43s allocated=0B defined_classes=0 tid=0x00000000236da950 nid=0x1e98 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #13 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=18.43s allocated=0B defined_classes=0 tid=0x0000000024ca8710 nid=0xebc in Object.wait()  [0x00000000253fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.5/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.5/Thread.java:833)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.5/InnocuousThread.java:162)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 cpu=46.80ms elapsed=18.53s tid=0x00000000231028b0 nid=0x19d0 runnable  
+
+"GC Thread#0" os_prio=2 cpu=46.80ms elapsed=18.54s tid=0x0000000000337f10 nid=0x1870 runnable  
+
+"GC Thread#1" os_prio=2 cpu=46.80ms elapsed=5.16s tid=0x00000000266f1a80 nid=0x1c74 runnable  
+
+"GC Thread#2" os_prio=2 cpu=0.00ms elapsed=5.16s tid=0x00000000266f1d30 nid=0x958 runnable  
+
+"GC Thread#3" os_prio=2 cpu=46.80ms elapsed=5.16s tid=0x00000000266f3fe0 nid=0x19b0 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=18.54s tid=0x0000000000339960 nid=0x1850 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=18.54s tid=0x000000000033ae40 nid=0x1ad0 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=18.54s tid=0x00000000230a2f40 nid=0x1a34 runnable  
+
+"G1 Refine#1" os_prio=2 cpu=0.00ms elapsed=5.11s tid=0x000000002503b2f0 nid=0x1f90 runnable  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=18.53s tid=0x00000000230a4430 nid=0xa00 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=15.60ms elapsed=18.43s tid=0x0000000024ca8080 nid=0x8ac waiting on condition  
+
+JNI global refs: 16, weak refs: 0
+
+
+
+====================
+Minecraft JStack Dump at [2023:03:29:08:38:51]
+
+2023-03-29 20:38:51
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000025aae560, length=12, elements={
+0x00000000002ee5c0, 0x0000000023106810, 0x0000000023109290, 0x0000000023122490,
+0x0000000023123010, 0x0000000023128490, 0x000000002312ce10, 0x00000000235bdb90,
+0x00000000235bf100, 0x00000000235d11c0, 0x00000000236da950, 0x0000000024ca8710
+}
+
+"main" #1 prio=5 os_prio=0 cpu=4336.83ms elapsed=21.61s allocated=175M defined_classes=3051 tid=0x00000000002ee5c0 nid=0x1a64 runnable  [0x00000000021fd000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x0000000772c777b8> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x000000077f4d3eb0> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at sun.nio.cs.StreamDecoder.readBytes(java.base@17.0.5/StreamDecoder.java:270)
+	at sun.nio.cs.StreamDecoder.implRead(java.base@17.0.5/StreamDecoder.java:313)
+	at sun.nio.cs.StreamDecoder.read(java.base@17.0.5/StreamDecoder.java:188)
+	- locked <0x000000077d473128> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(java.base@17.0.5/InputStreamReader.java:177)
+	at org.spongepowered.include.com.google.gson.stream.JsonReader.fillBuffer(JsonReader.java:1263)
+	at org.spongepowered.include.com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1309)
+	at org.spongepowered.include.com.google.gson.stream.JsonReader.consumeNonExecutePrefix(JsonReader.java:1514)
+	at org.spongepowered.include.com.google.gson.stream.JsonReader.doPeek(JsonReader.java:523)
+	at org.spongepowered.include.com.google.gson.stream.JsonReader.peek(JsonReader.java:414)
+	at org.spongepowered.include.com.google.gson.Gson.fromJson(Gson.java:799)
+	at org.spongepowered.include.com.google.gson.Gson.fromJson(Gson.java:741)
+	at org.spongepowered.asm.mixin.refmap.ReferenceMapper.readJson(ReferenceMapper.java:297)
+	at org.spongepowered.asm.mixin.refmap.ReferenceMapper.read(ReferenceMapper.java:262)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.onSelect(MixinConfig.java:730)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.selectConfigs(MixinProcessor.java:498)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.select(MixinProcessor.java:460)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.checkSelect(MixinProcessor.java:438)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:290)
+	- locked <0x000000077e1c35f8> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x000000077f811300> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at java.lang.Class.forName0(java.base@17.0.5/Native Method)
+	at java.lang.Class.forName(java.base@17.0.5/Class.java:467)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:50)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:117)
+	- locked <0x0000000772ec3970> (a net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl.getEntrypoint(EntrypointContainerImpl.java:53)
+	- locked <0x000000077f810e58> (a net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:47)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke(EntrypointUtils.java:35)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:162)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=21.59s allocated=0B defined_classes=0 tid=0x0000000023106810 nid=0x1074 waiting on condition  [0x000000002324f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=21.58s allocated=280B defined_classes=0 tid=0x0000000023109290 nid=0x9ac in Object.wait()  [0x00000000243ef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x0000000023122490 nid=0x680 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x0000000023123010 nid=0x1fc4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x0000000023128490 nid=0x1b58 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x000000002312ce10 nid=0x1a00 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=6177.64ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x00000000235bdb90 nid=0x1bfc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 3597       4       sun.nio.fs.WindowsPathParser::parse (384 bytes)
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=2 cpu=1466.41ms elapsed=21.54s allocated=25288B defined_classes=0 tid=0x00000000235bf100 nid=0x544 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #11 daemon prio=9 os_prio=2 cpu=15.60ms elapsed=21.54s allocated=0B defined_classes=0 tid=0x00000000235d11c0 nid=0x1f38 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #12 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=21.50s allocated=0B defined_classes=0 tid=0x00000000236da950 nid=0x1e98 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #13 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=21.50s allocated=0B defined_classes=0 tid=0x0000000024ca8710 nid=0xebc in Object.wait()  [0x00000000253fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.5/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.5/Thread.java:833)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.5/InnocuousThread.java:162)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 cpu=78.00ms elapsed=21.59s tid=0x00000000231028b0 nid=0x19d0 runnable  
+
+"GC Thread#0" os_prio=2 cpu=46.80ms elapsed=21.61s tid=0x0000000000337f10 nid=0x1870 runnable  
+
+"GC Thread#1" os_prio=2 cpu=46.80ms elapsed=8.23s tid=0x00000000266f1a80 nid=0x1c74 runnable  
+
+"GC Thread#2" os_prio=2 cpu=0.00ms elapsed=8.22s tid=0x00000000266f1d30 nid=0x958 runnable  
+
+"GC Thread#3" os_prio=2 cpu=46.80ms elapsed=8.22s tid=0x00000000266f3fe0 nid=0x19b0 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=21.61s tid=0x0000000000339960 nid=0x1850 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=21.61s tid=0x000000000033ae40 nid=0x1ad0 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=21.60s tid=0x00000000230a2f40 nid=0x1a34 runnable  
+
+"G1 Refine#1" os_prio=2 cpu=0.00ms elapsed=8.18s tid=0x000000002503b2f0 nid=0x1f90 runnable  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=21.60s tid=0x00000000230a4430 nid=0xa00 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=15.60ms elapsed=21.50s tid=0x0000000024ca8080 nid=0x8ac waiting on condition  
+
+JNI global refs: 16, weak refs: 2
+
+
+
+====================
+Minecraft JStack Dump at [2023:03:29:08:38:54]
+
+2023-03-29 20:38:54
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000026867410, length=13, elements={
+0x00000000002ee5c0, 0x0000000023106810, 0x0000000023109290, 0x0000000023122490,
+0x0000000023123010, 0x0000000023128490, 0x000000002312ce10, 0x00000000235bdb90,
+0x00000000235bf100, 0x00000000235d11c0, 0x00000000236da950, 0x0000000024ca8710,
+0x00000000299ad440
+}
+
+"main" #1 prio=5 os_prio=0 cpu=5413.23ms elapsed=24.70s allocated=273M defined_classes=3296 tid=0x00000000002ee5c0 nid=0x1a64 runnable  [0x00000000021fd000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x0000000772d7b598> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x000000077eaab628> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:106)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getRawClassByteArray(KnotClassDelegate.java:493)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:447)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassBytes(KnotClassDelegate.java:425)
+	at net.fabricmc.loader.impl.launch.knot.Knot.getClassByteArray(Knot.java:320)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassBytes(MixinServiceKnot.java:60)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassNode(MixinServiceKnot.java:76)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.loadMixinClass(MixinInfo.java:1312)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.<init>(MixinInfo.java:858)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepareMixins(MixinConfig.java:852)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepare(MixinConfig.java:777)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.prepareConfigs(MixinProcessor.java:540)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.select(MixinProcessor.java:462)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.checkSelect(MixinProcessor.java:438)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:290)
+	- locked <0x000000077e1c35f8> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x000000077f811300> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at java.lang.Class.forName0(java.base@17.0.5/Native Method)
+	at java.lang.Class.forName(java.base@17.0.5/Class.java:467)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:50)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:117)
+	- locked <0x0000000772ec3970> (a net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl.getEntrypoint(EntrypointContainerImpl.java:53)
+	- locked <0x000000077f810e58> (a net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:47)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke(EntrypointUtils.java:35)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:162)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=24.68s allocated=0B defined_classes=0 tid=0x0000000023106810 nid=0x1074 waiting on condition  [0x000000002324f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=24.68s allocated=280B defined_classes=0 tid=0x0000000023109290 nid=0x9ac in Object.wait()  [0x00000000243ef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772010178> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=24.63s allocated=0B defined_classes=0 tid=0x0000000023122490 nid=0x680 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=24.63s allocated=0B defined_classes=0 tid=0x0000000023123010 nid=0x1fc4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=24.63s allocated=0B defined_classes=0 tid=0x0000000023128490 nid=0x1b58 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=24.63s allocated=0B defined_classes=0 tid=0x000000002312ce10 nid=0x1a00 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=8611.26ms elapsed=24.63s allocated=48B defined_classes=0 tid=0x00000000235bdb90 nid=0x1bfc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4036       4       java.util.Formatter$FormatSpecifier::appendJustified (91 bytes)
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=2 cpu=1809.61ms elapsed=24.63s allocated=27040B defined_classes=0 tid=0x00000000235bf100 nid=0x544 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #11 daemon prio=9 os_prio=2 cpu=46.80ms elapsed=24.63s allocated=0B defined_classes=0 tid=0x00000000235d11c0 nid=0x1f38 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #12 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=24.59s allocated=0B defined_classes=0 tid=0x00000000236da950 nid=0x1e98 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #13 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=24.59s allocated=0B defined_classes=0 tid=0x0000000024ca8710 nid=0xebc in Object.wait()  [0x00000000253fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x0000000772000620> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.5/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.5/Thread.java:833)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.5/InnocuousThread.java:162)
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" #9 daemon prio=9 os_prio=2 cpu=2230.81ms elapsed=2.94s allocated=0B defined_classes=0 tid=0x00000000299ad440 nid=0x5fc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4025       4       org.objectweb.asm.ClassReader::readCode (5109 bytes)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 cpu=124.80ms elapsed=24.68s tid=0x00000000231028b0 nid=0x19d0 runnable  
+
+"GC Thread#0" os_prio=2 cpu=46.80ms elapsed=24.70s tid=0x0000000000337f10 nid=0x1870 runnable  
+
+"GC Thread#1" os_prio=2 cpu=46.80ms elapsed=11.32s tid=0x00000000266f1a80 nid=0x1c74 runnable  
+
+"GC Thread#2" os_prio=2 cpu=0.00ms elapsed=11.32s tid=0x00000000266f1d30 nid=0x958 runnable  
+
+"GC Thread#3" os_prio=2 cpu=46.80ms elapsed=11.32s tid=0x00000000266f3fe0 nid=0x19b0 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=24.70s tid=0x0000000000339960 nid=0x1850 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=24.70s tid=0x000000000033ae40 nid=0x1ad0 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=24.69s tid=0x00000000230a2f40 nid=0x1a34 runnable  
+
+"G1 Refine#1" os_prio=2 cpu=0.00ms elapsed=11.27s tid=0x000000002503b2f0 nid=0x1f90 runnable  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=24.69s tid=0x00000000230a4430 nid=0xa00 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=15.60ms elapsed=24.59s tid=0x0000000024ca8080 nid=0x8ac waiting on condition  
+
+JNI global refs: 17, weak refs: 7
+
+
+
+====================
+Minecraft JStack Dump at [2023:03:29:08:38:57]
+
+2023-03-29 20:38:57
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000026867410, length=13, elements={
+0x00000000002ee5c0, 0x0000000023106810, 0x0000000023109290, 0x0000000023122490,
+0x0000000023123010, 0x0000000023128490, 0x000000002312ce10, 0x00000000235bdb90,
+0x00000000235bf100, 0x00000000235d11c0, 0x00000000236da950, 0x0000000024ca8710,
+0x00000000299ad440
+}
+
+"main" #1 prio=5 os_prio=0 cpu=6614.44ms elapsed=27.84s allocated=463M defined_classes=3312 tid=0x00000000002ee5c0 nid=0x1a64 runnable  [0x00000000021fc000]
+   java.lang.Thread.State: RUNNABLE
+	at org.objectweb.asm.ClassReader.readCode(ClassReader.java:2557)
+	at org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1514)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:744)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:424)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassNode(MixinServiceKnot.java:78)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassNode(MixinServiceKnot.java:71)
+	at org.spongepowered.asm.mixin.transformer.ClassInfo.forName(ClassInfo.java:2022)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.getTargetClass(MixinInfo.java:1018)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.readTargetClasses(MixinInfo.java:1008)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.parseTargets(MixinInfo.java:896)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepareMixins(MixinConfig.java:869)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepare(MixinConfig.java:777)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.prepareConfigs(MixinProcessor.java:540)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.select(MixinProcessor.java:462)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.checkSelect(MixinProcessor.java:438)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:290)
+	- locked <0x00000007720a3820> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x00000007720a4578> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at java.lang.Class.forName0(java.base@17.0.5/Native Method)
+	at java.lang.Class.forName(java.base@17.0.5/Class.java:467)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:50)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:117)
+	- locked <0x00000007402c6400> (a net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl.getEntrypoint(EntrypointContainerImpl.java:53)
+	- locked <0x00000007720a4610> (a net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:47)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke(EntrypointUtils.java:35)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:162)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=27.82s allocated=0B defined_classes=0 tid=0x0000000023106810 nid=0x1074 waiting on condition  [0x000000002324f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=27.82s allocated=280B defined_classes=0 tid=0x0000000023109290 nid=0x9ac in Object.wait()  [0x00000000243ef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x00000007402e8538> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x00000007402e8538> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=27.78s allocated=0B defined_classes=0 tid=0x0000000023122490 nid=0x680 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=27.78s allocated=0B defined_classes=0 tid=0x0000000023123010 nid=0x1fc4 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=27.78s allocated=0B defined_classes=0 tid=0x0000000023128490 nid=0x1b58 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Monitor Deflation Thread" #7 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=27.78s allocated=0B defined_classes=0 tid=0x000000002312ce10 nid=0x1a00 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=2 cpu=11466.07ms elapsed=27.77s allocated=48B defined_classes=0 tid=0x00000000235bdb90 nid=0x1bfc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4222 %     4       org.objectweb.asm.ClassReader::readCode @ 2186 (5109 bytes)
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=2 cpu=1981.21ms elapsed=27.77s allocated=28216B defined_classes=0 tid=0x00000000235bf100 nid=0x544 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+   Locked ownable synchronizers:
+	- None
+
+"Sweeper thread" #11 daemon prio=9 os_prio=2 cpu=46.80ms elapsed=27.77s allocated=0B defined_classes=0 tid=0x00000000235d11c0 nid=0x1f38 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Notification Thread" #12 daemon prio=9 os_prio=0 cpu=0.00ms elapsed=27.74s allocated=0B defined_classes=0 tid=0x00000000236da950 nid=0x1e98 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Common-Cleaner" #13 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=27.73s allocated=0B defined_classes=0 tid=0x0000000024ca8710 nid=0xebc in Object.wait()  [0x00000000253fe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x000000074032e5b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x000000074032e5b8> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.5/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.5/Thread.java:833)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.5/InnocuousThread.java:162)
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" #9 daemon prio=9 os_prio=2 cpu=4960.83ms elapsed=6.08s allocated=0B defined_classes=0 tid=0x00000000299ad440 nid=0x5fc runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   Compiling: 4231       4       org.objectweb.asm.ClassReader::accept (1412 bytes)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=2 cpu=265.20ms elapsed=27.83s tid=0x00000000231028b0 nid=0x19d0 runnable  
+
+"GC Thread#0" os_prio=2 cpu=140.40ms elapsed=27.84s tid=0x0000000000337f10 nid=0x1870 runnable  
+
+"GC Thread#1" os_prio=2 cpu=124.80ms elapsed=14.46s tid=0x00000000266f1a80 nid=0x1c74 runnable  
+
+"GC Thread#2" os_prio=2 cpu=78.00ms elapsed=14.46s tid=0x00000000266f1d30 nid=0x958 runnable  
+
+"GC Thread#3" os_prio=2 cpu=140.40ms elapsed=14.46s tid=0x00000000266f3fe0 nid=0x19b0 runnable  
+
+"G1 Main Marker" os_prio=2 cpu=0.00ms elapsed=27.84s tid=0x0000000000339960 nid=0x1850 runnable  
+
+"G1 Conc#0" os_prio=2 cpu=0.00ms elapsed=27.84s tid=0x000000000033ae40 nid=0x1ad0 runnable  
+
+"G1 Refine#0" os_prio=2 cpu=0.00ms elapsed=27.84s tid=0x00000000230a2f40 nid=0x1a34 runnable  
+
+"G1 Refine#1" os_prio=2 cpu=0.00ms elapsed=14.41s tid=0x000000002503b2f0 nid=0x1f90 runnable  
+
+"G1 Refine#2" os_prio=2 cpu=0.00ms elapsed=0.28s tid=0x00000000293dc4e0 nid=0x9f8 runnable  
+
+"G1 Service" os_prio=2 cpu=0.00ms elapsed=27.84s tid=0x00000000230a4430 nid=0xa00 runnable  
+
+"VM Periodic Task Thread" os_prio=2 cpu=15.60ms elapsed=27.74s tid=0x0000000024ca8080 nid=0x8ac waiting on condition  
+
+JNI global refs: 18, weak refs: 8
+
+
+
+====================

@@ -1,0 +1,306 @@
+Minecraft JStack Dump at [2023:03:26:03:08:16]
+
+2023-03-26 15:08:16
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000026b9bda0, length=13, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x00000000251942c0
+}
+
+"main" #1 prio=5 os_prio=0 cpu=6583.24ms elapsed=23.57s allocated=553M defined_classes=3324 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x000000000228d000]
+   java.lang.Thread.State: RUNNABLE
+	at org.objectweb.asm.ClassReader.readElementValue(ClassReader.java:3062)
+	at org.objectweb.asm.ClassReader.readElementValues(ClassReader.java:2993)
+	at org.objectweb.asm.ClassReader.readField(ClassReader.java:1152)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:739)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:424)
+	at net.fabricmc.loader.impl.transformer.FabricTransformer.transform(FabricTransformer.java:72)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:454)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassBytes(KnotClassDelegate.java:425)
+	at net.fabricmc.loader.impl.launch.knot.Knot.getClassByteArray(Knot.java:320)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassBytes(MixinServiceKnot.java:60)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassNode(MixinServiceKnot.java:76)
+	at net.fabricmc.loader.impl.launch.knot.MixinServiceKnot.getClassNode(MixinServiceKnot.java:71)
+	at org.spongepowered.asm.mixin.transformer.ClassInfo.forName(ClassInfo.java:2022)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.getTargetClass(MixinInfo.java:1018)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.readTargetClasses(MixinInfo.java:1008)
+	at org.spongepowered.asm.mixin.transformer.MixinInfo.parseTargets(MixinInfo.java:896)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepareMixins(MixinConfig.java:869)
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.prepare(MixinConfig.java:781)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.prepareConfigs(MixinProcessor.java:540)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.select(MixinProcessor.java:462)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.checkSelect(MixinProcessor.java:438)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:290)
+	- locked <0x00000007420c5488> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x0000000742aa2cd8> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at java.lang.Class.forName0(java.base@17.0.5/Native Method)
+	at java.lang.Class.forName(java.base@17.0.5/Class.java:467)
+	at net.fabricmc.loader.impl.util.DefaultLanguageAdapter.create(DefaultLanguageAdapter.java:50)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry.getOrCreate(EntrypointStorage.java:117)
+	- locked <0x00000007417bb8b8> (a net.fabricmc.loader.impl.entrypoint.EntrypointStorage$NewEntry)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl.getEntrypoint(EntrypointContainerImpl.java:53)
+	- locked <0x0000000742e3c030> (a net.fabricmc.loader.impl.entrypoint.EntrypointContainerImpl)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUti
+
+====================
+Minecraft JStack Dump at [2023:03:26:03:08:19]
+
+2023-03-26 15:08:19
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000028c84660, length=13, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x00000000251942c0
+}
+
+"main" #1 prio=5 os_prio=0 cpu=7581.65ms elapsed=26.78s allocated=735M defined_classes=3426 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x000000000228d000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x00000007405b53d0> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x0000000777167b68> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:106)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getRawClassByteArray(KnotClassDelegate.java:493)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:447)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:407)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x00000007771ae640> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at me.jellysquid.mods.sodium.client.SodiumPreLaunch.checkJemalloc(SodiumPreLaunch.java:29)
+	at me.jellysquid.mods.sodium.client.SodiumPreLaunch.onPreLaunch(SodiumPreLaunch.java:19)
+	at net.fabricmc.loader.impl.launch.knot.Knot$$Lambda$144/0x0000000800e19f78.accept(Unknown Source)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke0(EntrypointUtils.java:47)
+	at net.fabricmc.loader.impl.entrypoint.EntrypointUtils.invoke(EntrypointUtils.java:35)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:162)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=26.76s allocated=0B defined_classes=0 tid=0x00000000231f5050 nid=0x1094 waiting on condition  [0x0000000023b6f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=26.76s allocated=280B defined_classes=0 tid=0x00000000231f9320 nid=0x17bc in Object.wait()  [0x0000000023a5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x00000007400cdde8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x00000007400cdde8> (a java.lang.ref.ReferenceQueue$
+
+====================
+Minecraft JStack Dump at [2023:03:26:03:08:23]
+
+2023-03-26 15:08:23
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000028c84660, length=13, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x00000000251942c0
+}
+
+"main" #1 prio=5 os_prio=0 cpu=8611.26ms elapsed=29.89s allocated=824M defined_classes=4008 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x0000000002289000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x00000007405bd5d0> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x00000007788bfac0> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:106)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getRawClassByteArray(KnotClassDelegate.java:493)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:447)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:407)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x00000007788be7a8> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at oshi.hardware.platform.windows.WindowsHardwareAbstractionLayer.createProcessor(WindowsHardwareAbstractionLayer.java:61)
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer$$Lambda$265/0x0000000800ee66a8.get(Unknown Source)
+	at oshi.util.Memoizer$1.get(Memoizer.java:87)
+	- locked <0x00000007788363e0> (a oshi.util.Memoizer$1)
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer.getProcessor(AbstractHardwareAbstractionLayer.java:68)
+	at net.minecraft.class_6396.method_37146(class_6396.java:74)
+	at net.minecraft.class_6396$$Lambda$268/0x0000000800ee6d08.run(Unknown Source)
+	at net.minecraft.class_6396.method_37121(class_6396.java:81)
+	at net.minecraft.class_6396.method_37128(class_6396.java:74)
+	at net.minecraft.class_6396.method_37143(class_6396.java:51)
+	at net.minecraft.class_6396$$Lambda$260/0x0000000800edfb98.run(Unknown Source)
+	at net.minecraft.class_6396.method_37121(class_6396.java:81)
+	at net.minecraft.class_6396.<init>(class_6396.java:51)
+	at net.minecraft.class_128.<init>(class_128.java:32)
+	at net.minecraft.class_128.method_24305(class_128.java:272)
+	at net.minecraft.client.main.Main.main(Main.java:151)
+	at java.lang.invoke.LambdaForm$DMH/0x0000000800e9c000.invokeStaticInit(java.base@17.0.5/LambdaForm$DMH)
+	at java.lang.invoke.LambdaForm$MH/0x0000000800e9c400.invokeExact_MT(java.base@17.0.5/LambdaForm$MH)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=29.88s allocated=0B defined_c
+
+====================
+Minecraft JStack Dump at [2023:03:26:03:08:26]
+
+2023-03-26 15:08:26
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000029899160, length=13, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x0000000025195c10
+}
+
+"main" #1 prio=5 os_prio=0 cpu=10155.67ms elapsed=32.98s allocated=1142M defined_classes=4500 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x000000000228d000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.RandomAccessFile.readBytes(java.base@17.0.5/Native Method)
+	at java.io.RandomAccessFile.read(java.base@17.0.5/RandomAccessFile.java:405)
+	at java.io.RandomAccessFile.readFully(java.base@17.0.5/RandomAccessFile.java:469)
+	at java.util.zip.ZipFile$Source.readFullyAt(java.base@17.0.5/ZipFile.java:1348)
+	- locked <0x00000007406118a0> (a java.io.RandomAccessFile)
+	at java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(java.base@17.0.5/ZipFile.java:915)
+	at java.util.zip.ZipFile$ZipFileInputStream.read(java.base@17.0.5/ZipFile.java:931)
+	- locked <0x0000000745877be0> (a sun.net.www.protocol.jar.URLJarFile)
+	at java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(java.base@17.0.5/ZipFile.java:448)
+	at java.util.zip.InflaterInputStream.read(java.base@17.0.5/InflaterInputStream.java:158)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:132)
+	at java.io.FilterInputStream.read(java.base@17.0.5/FilterInputStream.java:106)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getRawClassByteArray(KnotClassDelegate.java:493)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPreMixinClassByteArray(KnotClassDelegate.java:447)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:407)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x000000077a88ab50> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at net.minecraft.class_128.method_557(class_128.java:104)
+	at net.minecraft.class_128.method_568(class_128.java:125)
+	at net.minecraft.class_128.method_24305(class_128.java:272)
+	at net.minecraft.client.main.Main.main(Main.java:151)
+	at java.lang.invoke.LambdaForm$DMH/0x0000000800e9c000.invokeStaticInit(java.base@17.0.5/LambdaForm$DMH)
+	at java.lang.invoke.LambdaForm$MH/0x0000000800e9c400.invokeExact_MT(java.base@17.0.5/LambdaForm$MH)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=0.00ms elapsed=32.96s allocated=0B defined_classes=0 tid=0x00000000231f5050 nid=0x1094 waiting on condition  [0x0000000023b6f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=32.96s allocated=824B defined_classes=0 tid=0x00000000231f9320 nid=0x17bc in Object.wait()  [0x0000000023a5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x00000007400cdde8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x00000007400cdde8> (a java.la
+
+====================
+Minecraft JStack Dump at [2023:03:26:03:08:29]
+
+2023-03-26 15:08:29
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x0000000027163ce0, length=13, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x0000000025195c10
+}
+
+"main" #1 prio=5 os_prio=0 cpu=11949.68ms elapsed=36.08s allocated=1641M defined_classes=5220 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x0000000002284000]
+   java.lang.Thread.State: RUNNABLE
+	at org.spongepowered.asm.mixin.injection.code.Injector.checkTargetForNode(Injector.java:393)
+	at org.spongepowered.asm.mixin.injection.invoke.RedirectInjector.inject(RedirectInjector.java:324)
+	at org.spongepowered.asm.mixin.injection.code.Injector.inject(Injector.java:276)
+	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.inject(InjectionInfo.java:445)
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.applyInjections(MixinTargetContext.java:1378)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyInjections(MixinApplicatorStandard.java:1052)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:400)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:325)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:421)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:403)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363)
+	- locked <0x0000000745deea30> (a org.spongepowered.asm.mixin.transformer.MixinProcessor)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:414)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218)
+	- locked <0x0000000744445c10> (a java.lang.Object)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:145)
+	at java.lang.ClassLoader.loadClass(java.base@17.0.5/ClassLoader.java:520)
+	at net.minecraft.class_5872.<clinit>(class_5872.java:9)
+	at net.minecraft.class_5871.method_33968(class_5871.java:16)
+	at net.minecraft.class_5871$$Lambda$432/0x0000000800f8f250.apply(Unknown Source)
+	at com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(RecordCodecBuilder.java:76)
+	at net.minecraft.class_5871.<clinit>(class_5871.java:12)
+	at net.minecraft.class_2939.<clinit>(class_2939.java:33)
+	at net.minecraft.class_5463.<clinit>(class_5463.java:19)
+	at net.minecraft.class_5458.method_30572(class_5458.java:52)
+	at net.minecraft.class_5458$$Lambda$408/0x0000000800f82658.get(Unknown Source)
+	at net.minecraft.class_5458.method_30566(class_5458.java:86)
+	at net.minecraft.class_5458$$Lambda$419/0x0000000800f87078.accept(Unknown Source)
+	at java.util.LinkedHashMap.forEach(java.base@17.0.5/LinkedHashMap.java:721)
+	at net.minecraft.class_5458.<clinit>(class_5458.java:85)
+	at net.minecraft.class_2378.<clinit>(class_2378.java:291)
+	at net.minecraft.class_2966.method_12851(class_2966.java:49)
+	at net.minecraft.client.main.Main.main(Main.java:153)
+	at java.lang.invoke.LambdaForm$DMH/0x0000000800e9c000.invokeStaticInit(java.base@17.0.5/LambdaForm$DMH)
+	at java.lang.invoke.LambdaForm$MH/0x0000000800e9c400.invokeExact_MT(java.base@17.0.5/LambdaForm$MH)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotCli
+
+====================

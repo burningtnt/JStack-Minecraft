@@ -4,17 +4,20 @@ import com.sun.tools.attach.VirtualMachine;
 import sun.jvmstat.monitor.*;
 import sun.tools.attach.HotSpotVirtualMachine;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Set;
 
+
+/*
+ JVM:
+ cd C:\Users\Jacky\AppData\Cache[bg]\modDev\Jstack Minecraft&jlink --add-modules java.base,jdk.attach,jdk.internal.jvmstat,jdk.attach,java.instrument --strip-debug --no-man-pages --no-header-files --compress=2 --output jre
+ */
 public class Main {
     public static void main(String[] args) {
         try {
@@ -51,13 +54,9 @@ public class Main {
                 Logger.info(String.format("Get Jstack output of Minecraft VM with pid %s for %sth(st/rd) time.", minecraftPid, i + 1));
 
                 fileOutputStream.write(getDataDumpHead().getBytes(StandardCharsets.UTF_8));
-                String data = Objects.requireNonNullElse(getDataDump(minecraftPid), "Cannot attach to JVM.");
-                if (data.toLowerCase().contains("deadlock")) {
-                    fileOutputStream.write("Warning: Deadlock detected.\n".getBytes(StandardCharsets.UTF_8));
-                }
                 fileOutputStream.write('\n');
 
-                fileOutputStream.write(data.getBytes(StandardCharsets.UTF_8));
+                writeDataDumpTo(minecraftPid, fileOutputStream);
 
                 fileOutputStream.write(("\n\n" + "=".repeat(20) + "\n").getBytes(StandardCharsets.UTF_8));
                 if (i < time - 1) {
@@ -74,7 +73,7 @@ public class Main {
     }
 
     private static int getMinecraftVM() throws URISyntaxException, MonitorException {
-        String[] minecraftPackageNameList = new String[]{"net.fabricmc", "net.minecraftforge", "net.minecraft", "cpw.mods"};
+        String[] minecraftPackageNameList = new String[]{"net.fabricmc", "net.minecraftforge", "net.minecraft", "cpw.mods", "org.jackhuang.hmcl"};
 
         HostIdentifier hostId = new HostIdentifier((String) null);
         MonitoredHost monitoredHost = MonitoredHost.getMonitoredHost(hostId);
@@ -149,17 +148,33 @@ public class Main {
         ));
     }
 
-    private static String getDataDump(int pid) {
+    private static void writeDataDumpTo(int pid, OutputStream outputStream) {
         try {
             VirtualMachine vm = VirtualMachine.attach(String.valueOf(pid));
             InputStream in = ((HotSpotVirtualMachine) vm).remoteDataDump("-e -l");
-            String dataDump = new String(in.readAllBytes());
+            PrintStream printStream = new PrintStream(outputStream,true,StandardCharsets.UTF_8);
+            drainUTF8(in,printStream);
             in.close();
             vm.detach();
-            return dataDump;
         } catch (Throwable e) {
             Logger.error(String.format("An Error was thrown while attaching VM with pid %s", pid), e);
-            return null;
         }
+    }
+
+    private static void drainUTF8(InputStream is, PrintStream ps) throws IOException {
+        try (BufferedInputStream bis = new BufferedInputStream(is);
+             InputStreamReader isr = new InputStreamReader(bis, StandardCharsets.UTF_8)) {
+            char[] c = new char[256];
+            int n;
+
+            do {
+                n = isr.read(c);
+
+                if (n > 0) {
+                    ps.print(n == c.length ? c : Arrays.copyOf(c, n));
+                }
+            } while (n > 0);
+        }
+
     }
 }

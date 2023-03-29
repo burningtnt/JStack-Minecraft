@@ -1,0 +1,73 @@
+Minecraft JStack Dump at [2023:03:26:03:24:52]
+
+2023-03-26 15:24:53
+Full thread dump OpenJDK 64-Bit Server VM (17.0.5+8-LTS mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00000000559bf780, length=26, elements={
+0x00000000003fe5c0, 0x00000000231f5050, 0x00000000231f9320, 0x0000000023211010,
+0x00000000232157a0, 0x000000002321a970, 0x0000000023781790, 0x0000000023782c40,
+0x0000000023783d10, 0x0000000023796140, 0x000000002389bf60, 0x0000000024fa8710,
+0x000000002c4d15e0, 0x000000002c4d3790, 0x000000002d1187d0, 0x000000002c4d1ab0,
+0x000000002d119b10, 0x000000002d119640, 0x000000002d11bcc0, 0x000000002d11b320,
+0x00000000250c5f60, 0x000000002d4aa310, 0x000000002d4aa7e0, 0x000000002d4aacb0,
+0x000000002d4a9e40, 0x00000000250c6430
+}
+
+"Render thread" #1 prio=5 os_prio=0 cpu=153099.38ms elapsed=1020.23s allocated=6649M defined_classes=21893 tid=0x00000000003fe5c0 nid=0x1944 runnable  [0x000000000228e000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.5/Native Method)
+	- parking to wait for  <0x000000076ffaa680> (a java.lang.String)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@17.0.5/LockSupport.java:252)
+	at dynamicfps.DynamicFPSMod.idle(DynamicFPSMod.java:176)
+	at dynamicfps.DynamicFPSMod.checkForRender(DynamicFPSMod.java:166)
+	at dynamicfps.DynamicFPSMod.checkForRender(DynamicFPSMod.java:76)
+	at net.minecraft.class_757.handler$cbh000$onRender(class_757.java:2519)
+	at net.minecraft.class_757.method_3192(class_757.java)
+	at net.minecraft.class_310.method_1523(class_310.java:1122)
+	at net.minecraft.class_310.method_1514(class_310.java:737)
+	at net.minecraft.client.main.Main.main(Main.java:236)
+	at java.lang.invoke.LambdaForm$DMH/0x0000000800e9c000.invokeStaticInit(java.base@17.0.5/LambdaForm$DMH)
+	at java.lang.invoke.LambdaForm$MH/0x0000000800e9c400.invokeExact_MT(java.base@17.0.5/LambdaForm$MH)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 cpu=15.60ms elapsed=1020.21s allocated=136B defined_classes=0 tid=0x00000000231f5050 nid=0x1094 waiting on condition  [0x0000000023b6f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.5/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.5/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.5/Reference.java:215)
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=1 cpu=0.00ms elapsed=1020.21s allocated=1648B defined_classes=0 tid=0x00000000231f9320 nid=0x17bc in Object.wait()  [0x0000000023a5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.5/Native Method)
+	- waiting on <0x00000007400cdde8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:155)
+	- locked <0x00000007400cdde8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.5/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.5/Finalizer.java:172)
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 cpu=0.00ms elapsed=1020.15s allocated=0B defined_classes=0 tid=0x0000000023211010 nid=0xb80 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 cpu=0.00ms elapsed=1020.15s allocated=0B defined_classes=0 tid=0x00000000232157a0 nid=0x19a0 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #6 daemon prio=9 os_prio=0 cpu=15.60ms elapsed=1020.15s allocated=0B defined_classes=0 tid=0x000000002321a970 nid=0x15cc runnable  [0x0000000000000000]
+   java
