@@ -19,6 +19,8 @@ import java.util.Set;
  cd C:\Users\Jacky\AppData\Cache[bg]\modDev\Jstack Minecraft&jlink --add-modules java.base,jdk.attach,jdk.internal.jvmstat,jdk.attach,java.instrument --strip-debug --no-man-pages --no-header-files --compress=2 --output jre
  */
 public class Main {
+    public static final int TOOL_VERSION = 7;
+
     public static void main(String[] args) {
         try {
             realMain();
@@ -50,15 +52,15 @@ public class Main {
         File outputFile = getCurrentOutputFile();
         int time = 5;
         try (FileOutputStream fileOutputStream = new FileOutputStream(outputFile)) {
+            fileOutputStream.write(String.format(
+                    "----- Minecraft JStack Dump -----\nMinecraft vm PID: %d\nJstack Minecraft Version: %d\n\n", minecraftPid, TOOL_VERSION
+            ).getBytes(StandardCharsets.UTF_8));
+
             for (int i = 0; i < time; i++) {
                 Logger.info(String.format("Get Jstack output of Minecraft VM with pid %s for %sth(st/rd) time.", minecraftPid, i + 1));
+                fileOutputStream.write(getDataDump(minecraftPid).getBytes(StandardCharsets.UTF_8));
+                fileOutputStream.write(("=".repeat(20) + "\n\n").getBytes(StandardCharsets.UTF_8));
 
-                fileOutputStream.write(getDataDumpHead().getBytes(StandardCharsets.UTF_8));
-                fileOutputStream.write('\n');
-
-                writeDataDumpTo(minecraftPid, fileOutputStream);
-
-                fileOutputStream.write(("\n\n" + "=".repeat(20) + "\n").getBytes(StandardCharsets.UTF_8));
                 if (i < time - 1) {
                     Thread.sleep(3000);
                 }
@@ -142,39 +144,39 @@ public class Main {
         )));
     }
 
-    private static String getDataDumpHead() {
-        return String.format("Minecraft JStack Dump at [%s]\n", LocalDateTime.now().format(
-                DateTimeFormatter.ofPattern("yyyy:MM:dd:hh:mm:ss")
-        ));
-    }
-
-    private static void writeDataDumpTo(int pid, OutputStream outputStream) {
+    private static String getDataDump(int pid) {
         try {
+            StringBuilder stringBuilder = new StringBuilder();
             VirtualMachine vm = VirtualMachine.attach(String.valueOf(pid));
-            InputStream in = ((HotSpotVirtualMachine) vm).remoteDataDump("-e -l");
-            PrintStream printStream = new PrintStream(outputStream,true,StandardCharsets.UTF_8);
-            drainUTF8(in,printStream);
-            in.close();
+            try (BufferedInputStream bufferedInputStream = new BufferedInputStream(((HotSpotVirtualMachine) vm).remoteDataDump("-e -l"));
+                 InputStreamReader inputStreamReader = new InputStreamReader(bufferedInputStream, StandardCharsets.UTF_8)) {
+                char[] dataCache = new char[256];
+                int status;
+
+                do {
+                    status = inputStreamReader.read(dataCache);
+
+                    if (status > 0) {
+                        stringBuilder.append(status == dataCache.length ? dataCache : Arrays.copyOf(dataCache, status));
+                    }
+                } while (status > 0);
+            }
             vm.detach();
+            return stringBuilder.toString();
         } catch (Throwable e) {
             Logger.error(String.format("An Error was thrown while attaching VM with pid %s", pid), e);
+
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter);
+            e.printStackTrace(printWriter);
+
+            String errorDetail = stringWriter.toString();
+            try {
+                stringWriter.close();
+            } catch (IOException ignored) {
+            }
+
+            return errorDetail;
         }
-    }
-
-    private static void drainUTF8(InputStream is, PrintStream ps) throws IOException {
-        try (BufferedInputStream bis = new BufferedInputStream(is);
-             InputStreamReader isr = new InputStreamReader(bis, StandardCharsets.UTF_8)) {
-            char[] c = new char[256];
-            int n;
-
-            do {
-                n = isr.read(c);
-
-                if (n > 0) {
-                    ps.print(n == c.length ? c : Arrays.copyOf(c, n));
-                }
-            } while (n > 0);
-        }
-
     }
 }
