@@ -2,7 +2,6 @@ package net.burningtnt.jstackmc;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -30,7 +29,7 @@ public final class Main {
         scanner.nextLine();
     }
 
-    private static void realMain() throws URISyntaxException, sun.jvmstat.monitor.MonitorException, IOException, InterruptedException {
+    private static void realMain() throws IOException, InterruptedException {
         int minecraftPid = MinecraftVMScanner.getMinecraftVM();
 
         if (minecraftPid == -1) {
