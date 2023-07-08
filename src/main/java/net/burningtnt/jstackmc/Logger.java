@@ -1,13 +1,15 @@
 package net.burningtnt.jstackmc;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class Logger {
+public final class Logger {
+    private Logger() {
+    }
+
     private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss");
 
     public static void info(String text) {
