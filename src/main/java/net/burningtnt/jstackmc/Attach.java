@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.nio.CharBuffer;
-import java.nio.charset.StandardCharsets;
 
 public final class Attach {
     private Attach() {
@@ -19,37 +18,37 @@ public final class Attach {
         VirtualMachine provide() throws AttachNotSupportedException, IOException;
     }
 
-    public static String attachVM(VirtualMachineDescriptor descriptor, String command) {
+    public static String attachVM(VirtualMachineDescriptor descriptor, String command) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         attachVM(descriptor, command, stringBuilder);
         return stringBuilder.toString();
     }
 
-    public static void attachVM(VirtualMachineDescriptor descriptor, String command, Appendable appendable) {
+    public static void attachVM(VirtualMachineDescriptor descriptor, String command, Appendable appendable) throws IOException {
         attachVM(() -> descriptor.provider().attachVirtualMachine(descriptor.id()), command, appendable);
     }
 
-    public static String attachVM(long lvmid, String command) {
+    public static String attachVM(long lvmid, String command) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         attachVM(lvmid, command, stringBuilder);
         return stringBuilder.toString();
     }
 
-    public static void attachVM(long lvmid, String command, Appendable appendable) {
+    public static void attachVM(long lvmid, String command, Appendable appendable) throws IOException {
         attachVM(() -> VirtualMachine.attach(String.valueOf(lvmid)), command, appendable);
     }
 
-    public static String attachVM(VirtualMachineProvider virtualMachineProvider, String command) {
+    public static String attachVM(VirtualMachineProvider virtualMachineProvider, String command) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         attachVM(virtualMachineProvider, command, stringBuilder);
         return stringBuilder.toString();
     }
 
-    public static void attachVM(VirtualMachineProvider virtualMachineProvider, String command, Appendable appendable) {
+    public static void attachVM(VirtualMachineProvider virtualMachineProvider, String command, Appendable appendable) throws IOException {
         try {
             VirtualMachine vm = virtualMachineProvider.provide();
 
-            try (InputStreamReader inputStreamReader = new InputStreamReader(new BufferedInputStream(((sun.tools.attach.HotSpotVirtualMachine) vm).executeJCmd(command)), StandardCharsets.UTF_8)) {
+            try (InputStreamReader inputStreamReader = new InputStreamReader(new BufferedInputStream(((sun.tools.attach.HotSpotVirtualMachine) vm).executeJCmd(command)))) {
                 char[] dataCache = new char[256];
                 int status;
 
@@ -65,26 +64,22 @@ public final class Attach {
             }
         } catch (Throwable throwable) {
             Logger.error("An Exception happened while attaching vm", throwable);
-            try {
-                appendable.append('\n');
-                throwable.printStackTrace(new PrintWriter(new Writer() {
-                    @Override
-                    public void write(char @NotNull [] cbuf, int off, int len) throws IOException {
-                        appendable.append(CharBuffer.wrap(cbuf, off, len));
-                    }
+            appendable.append('\n');
+            throwable.printStackTrace(new PrintWriter(new Writer() {
+                @Override
+                public void write(char @NotNull [] cbuf, int off, int len) throws IOException {
+                    appendable.append(CharBuffer.wrap(cbuf, off, len));
+                }
 
-                    @Override
-                    public void flush() {
-                    }
+                @Override
+                public void flush() {
+                }
 
-                    @Override
-                    public void close() {
-                    }
-                }));
-                appendable.append('\n');
-            } catch (IOException e) {
-                Logger.error("An IOException happened while writing exception which happened while attaching vm", e);
-            }
+                @Override
+                public void close() {
+                }
+            }));
+            appendable.append('\n');
         }
     }
 }

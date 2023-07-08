@@ -81,7 +81,7 @@ public final class GameDumpCreator {
         }
     }
 
-    private static void writeDumpHeadTo(long lvmid, PrintWriter printWriter) {
+    private static void writeDumpHeadTo(long lvmid, PrintWriter printWriter) throws IOException {
         DumpHead dumpHead = new DumpHead();
         dumpHead.push("Tool Version", String.valueOf(TOOL_VERSION));
         dumpHead.push("VM PID", String.valueOf(lvmid));
@@ -99,7 +99,7 @@ public final class GameDumpCreator {
         dumpHead.writeTo(printWriter);
     }
 
-    private static void writeDumpBodyTo(long lvmid, PrintWriter printWriter) {
+    private static void writeDumpBodyTo(long lvmid, PrintWriter printWriter) throws IOException {
         Attach.attachVM(lvmid, "Thread.print", printWriter);
     }
 }
