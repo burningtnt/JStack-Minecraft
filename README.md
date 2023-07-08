@@ -12,4 +12,4 @@ JStack Minecraft: An analysis tool specifically developed for Minecraft: Java Ed
 3. Wait until a black window pops up displaying the word **Finish**, and then upload the selected file in the preview window that pops up later.
 
 ### Downloads
-*Github: [Jstack Minecraft v7.zip](release/Jstack%20Minecraft%20v7.zip)
+*Github: [Jstack Minecraft v8.zip](https://github.com/burningtnt/JStack-Minecraft/releases/download/V8/Jstack.Minecraft.v8.zip)

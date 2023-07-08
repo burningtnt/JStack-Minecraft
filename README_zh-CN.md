@@ -12,4 +12,4 @@ JStack Minecraft: 一款专门为 Minecraft: Java Edition 开发的分析工具
 3. 等到弹出的黑色窗口中显示 **Finish** 字样，上传稍后弹出的文件预览窗口中选中的文件。
 
 ### 下载
-*Github: [Jstack Minecraft v7.zip](release/Jstack%20Minecraft%20v7.zip)
+*Github: [Jstack Minecraft v8.zip](https://github.com/burningtnt/JStack-Minecraft/releases/download/V8/Jstack.Minecraft.v8.zip)
