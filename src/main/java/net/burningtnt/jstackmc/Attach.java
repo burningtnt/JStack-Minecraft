@@ -4,6 +4,7 @@ import com.sun.tools.attach.AttachNotSupportedException;
 import com.sun.tools.attach.VirtualMachine;
 import com.sun.tools.attach.VirtualMachineDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.nio.CharBuffer;
@@ -45,8 +46,10 @@ public final class Attach {
     }
 
     public static void attachVM(VirtualMachineProvider virtualMachineProvider, String command, Appendable appendable) throws IOException {
+        @Nullable String vmID = null;
         try {
             VirtualMachine vm = virtualMachineProvider.provide();
+            vmID = vm.id();
 
             try (InputStreamReader inputStreamReader = new InputStreamReader(new BufferedInputStream(((sun.tools.attach.HotSpotVirtualMachine) vm).executeJCmd(command)))) {
                 char[] dataCache = new char[256];
@@ -63,7 +66,7 @@ public final class Attach {
                 vm.detach();
             }
         } catch (Throwable throwable) {
-            Logger.error("An Exception happened while attaching vm", throwable);
+            Logger.error(String.format("An Exception happened while attaching vm %s", vmID == null ? "UNKNOWN" : vmID), throwable);
             appendable.append('\n');
             throwable.printStackTrace(new PrintWriter(new Writer() {
                 @Override
