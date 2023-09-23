@@ -12,11 +12,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 
-/*
- JVM:
- cd "release/Jstack Minecraft"&jlink --add-modules java.base,jdk.attach,jdk.internal.jvmstat,jdk.attach,java.instrument --strip-debug --no-man-pages --no-header-files --compress=2 --output jre_Windows
- */
-
 public final class Main {
     private static final int DEFAULT_RETRY_TIME = 3;
 
@@ -43,6 +38,10 @@ public final class Main {
         }
 
         for (VirtualMachineDescriptor descriptor : VirtualMachine.list()) {
+            if (JVMDescriptor.isCurrentJVM(descriptor)) {
+                continue;
+            }
+
             JVMCommandExecutor executor;
             try {
                 executor = JVMCommandExecutor.of(descriptor, retryTime);
@@ -52,9 +51,6 @@ public final class Main {
             }
 
             try {
-                if (JVMDescriptor.isCurrentJVM(executor)) {
-                    continue;
-                }
                 if (!JVMDescriptor.isMinecraftJVM(executor)) {
                     continue;
                 }

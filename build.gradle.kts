@@ -24,7 +24,6 @@ val javadocJar = tasks.create<Jar>("javadocJar") {
 
 tasks.compileJava {
     listOf(
-        "jdk.internal.jvmstat/sun.jvmstat.monitor",
         "jdk.attach/sun.tools.attach"
     ).forEach { string ->
         this.options.compilerArgs.add("--add-exports")
@@ -50,9 +49,6 @@ tasks.getByName("build") {
             attributes(
                 "Main-Class" to "net.burningtnt.jstackmc.Main",
                 "Add-Opens" to listOf(
-                    "java.base/java.lang",
-                    "java.base/java.lang.reflect",
-                    "jdk.internal.jvmstat/sun.jvmstat.monitor",
                     "jdk.attach/sun.tools.attach"
                 ).joinToString(" ")
             )

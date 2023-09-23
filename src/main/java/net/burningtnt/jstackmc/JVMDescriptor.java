@@ -1,5 +1,7 @@
 package net.burningtnt.jstackmc;
 
+import com.sun.tools.attach.VirtualMachineDescriptor;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,7 +39,7 @@ public final class JVMDescriptor {
 
     private static final String CURRENT_JVM = String.valueOf(ProcessHandle.current().pid());
 
-    public static boolean isCurrentJVM(JVMCommandExecutor executor) {
-        return executor.virtualMachine.id().equals(CURRENT_JVM);
+    public static boolean isCurrentJVM(VirtualMachineDescriptor descriptor) {
+        return descriptor.id().equals(CURRENT_JVM);
     }
 }

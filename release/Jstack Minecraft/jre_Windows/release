@@ -1,2 +1,2 @@
-JAVA_VERSION="18.0.1.1"
-MODULES="java.base java.instrument jdk.internal.jvmstat jdk.attach"
+JAVA_VERSION="17.0.7"
+MODULES="java.base java.logging jdk.internal.jvmstat jdk.attach"

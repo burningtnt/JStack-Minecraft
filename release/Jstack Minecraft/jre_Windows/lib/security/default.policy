@@ -239,3 +239,31 @@ grant codeBase "jrt:/jdk.crypto.mscapi" {
     permission java.security.SecurityPermission "authProvider.SunMSCAPI";
     permission java.util.PropertyPermission "*", "read";
 };
+grant codeBase "jrt:/javafx.base" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.controls" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.fxml" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.graphics" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.media" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.swing" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "jrt:/javafx.web" {
+    permission java.security.AllPermission;
+};
+
