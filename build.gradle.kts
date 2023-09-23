@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.github.burningtnt"
-version = "0.8.0"
+version = "0.9.0"
 description = "An analysis tool specifically developed for Minecraft: Java Edition"
 
 java {
