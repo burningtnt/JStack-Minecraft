@@ -1,1 +1,1 @@
-rootProject.name = "Jstack-Minecraft"
+rootProject.name = "JStack-Minecraft"
