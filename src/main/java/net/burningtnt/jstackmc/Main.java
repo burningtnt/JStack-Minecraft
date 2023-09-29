@@ -38,7 +38,7 @@ public final class Main {
         }
 
         for (VirtualMachineDescriptor descriptor : VirtualMachine.list()) {
-            if (JVMDescriptor.isCurrentJVM(descriptor)) {
+            if (JVMDescriptorAnalyzer.isCurrentJVM(descriptor)) {
                 continue;
             }
 
@@ -51,14 +51,14 @@ public final class Main {
             }
 
             try {
-                if (!JVMDescriptor.isMinecraftJVM(executor)) {
+                if (!JVMDescriptorAnalyzer.isMinecraftJVM(executor)) {
                     continue;
                 }
 
                 Logging.getLogger().log(Level.INFO, String.format("Find Minecraft VM with id %s.", executor.virtualMachine.id()));
 
                 try (Writer writer = Files.newBufferedWriter(output)) {
-                    GameDumpCreator.writeDumpTo(executor, writer, dumpTime);
+                    GameDumpCreator.of(dumpTime).writeDumpTo(executor, writer);
                 }
             } finally {
                 executor.close();
