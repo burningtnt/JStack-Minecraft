@@ -45,8 +45,8 @@ public abstract class JVMCommandExecutor implements AutoCloseable {
         throw exception;
     }
 
-    public static JVMCommandExecutor of(VirtualMachineDescriptor descriptor, int retyTime) throws IOException {
-        VirtualMachine virtualMachine = attach(descriptor, retyTime);
+    public static JVMCommandExecutor of(VirtualMachineDescriptor descriptor, int retryTime) throws IOException {
+        VirtualMachine virtualMachine = attach(descriptor, retryTime);
         try {
             if (virtualMachine instanceof sun.tools.attach.HotSpotVirtualMachine) {
                 return new JVMCommandExecutor(virtualMachine) {

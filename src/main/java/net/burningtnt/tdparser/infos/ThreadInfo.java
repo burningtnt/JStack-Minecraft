@@ -1,6 +1,6 @@
 package net.burningtnt.tdparser.infos;
 
-import net.burningtnt.tdparser.stacktrace.AbstractStackTraceElement;
+import net.burningtnt.tdparser.infos.stacktrace.AbstractStackTraceElement;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -22,6 +22,6 @@ public record ThreadInfo(String threadName, @Nullable Long mainID, boolean isDae
         this.nid = nid;
         this.threadID = threadID;
         this.state = state;
-        this.stackTraceElements = stackTraceElements == null ? stackTraceElements : Collections.unmodifiableList(stackTraceElements);
+        this.stackTraceElements = stackTraceElements == null ? null : Collections.unmodifiableList(stackTraceElements);
     }
 }

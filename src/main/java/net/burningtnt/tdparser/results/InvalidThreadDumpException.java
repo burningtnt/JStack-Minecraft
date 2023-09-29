@@ -1,4 +1,4 @@
-package net.burningtnt.tdparser;
+package net.burningtnt.tdparser.results;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -1,4 +1,4 @@
-package net.burningtnt.tdparser;
+package net.burningtnt.tdparser.results;
 
 import net.burningtnt.tdparser.infos.JNIRefInfo;
 import net.burningtnt.tdparser.infos.SMRInfo;

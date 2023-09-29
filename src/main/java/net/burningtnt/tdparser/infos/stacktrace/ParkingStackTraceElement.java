@@ -1,11 +1,11 @@
-package net.burningtnt.tdparser.stacktrace;
+package net.burningtnt.tdparser.infos.stacktrace;
 
-public class LockedStackTraceElement extends AbstractStackTraceElement {
+public final class ParkingStackTraceElement extends AbstractStackTraceElement {
     private final long position;
 
     private final String source;
 
-    public LockedStackTraceElement(long position, String source) {
+    public ParkingStackTraceElement(long position, String source) {
         this.position = position;
         this.source = source;
     }

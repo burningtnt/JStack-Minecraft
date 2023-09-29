@@ -1,7 +1,10 @@
 package net.burningtnt.tdparser;
 
 import net.burningtnt.tdparser.infos.*;
-import net.burningtnt.tdparser.stacktrace.*;
+import net.burningtnt.tdparser.results.IThreadDumpAnalyzedResult;
+import net.burningtnt.tdparser.results.InvalidThreadDumpException;
+import net.burningtnt.tdparser.results.ThreadDumpReport;
+import net.burningtnt.tdparser.infos.stacktrace.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,7 +35,7 @@ public final class ThreadDumpAnalyzer {
         return verifyResult(new ThreadDumpReport(dumpInfo, smrInfo, threadInfos, refInfo));
     }
 
-    public static IThreadDumpAnalyzedResult salfeAnalyze(CharSequence report) {
+    public static IThreadDumpAnalyzedResult safeAnalyze(CharSequence report) {
         try {
             return analyze(report);
         } catch (InvalidThreadDumpException e) {

@@ -1,4 +1,4 @@
-package net.burningtnt.tdparser.stacktrace;
+package net.burningtnt.tdparser.infos.stacktrace;
 
 public class WaitingStackTraceElement extends AbstractStackTraceElement {
     private final String target;

@@ -1,11 +1,11 @@
 package net.burningtnt.jstackmc;
 
-import net.burningtnt.tdparser.IThreadDumpAnalyzedResult;
+import net.burningtnt.tdparser.results.IThreadDumpAnalyzedResult;
 import net.burningtnt.tdparser.ThreadDumpAnalyzer;
 import net.burningtnt.tdparser.infos.ThreadInfo;
 import net.burningtnt.tdparser.infos.ThreadStateInfo;
-import net.burningtnt.tdparser.ThreadDumpReport;
-import net.burningtnt.tdparser.stacktrace.AbstractStackTraceElement;
+import net.burningtnt.tdparser.results.ThreadDumpReport;
+import net.burningtnt.tdparser.infos.stacktrace.AbstractStackTraceElement;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -110,7 +110,7 @@ public final class GameDumpCreator {
 
     private void generateDump(JVMCommandExecutor executor) throws IOException {
         String result = executor.executeCommandAsString("Thread.print");
-        this.results.add(Map.entry(result, ThreadDumpAnalyzer.salfeAnalyze(result)));
+        this.results.add(Map.entry(result, ThreadDumpAnalyzer.safeAnalyze(result)));
     }
 
     private void writeAnalysisTo(Writer writer) throws IOException {

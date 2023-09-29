@@ -1,4 +1,4 @@
-package net.burningtnt.tdparser.stacktrace;
+package net.burningtnt.tdparser.infos.stacktrace;
 
 import java.util.List;
 
