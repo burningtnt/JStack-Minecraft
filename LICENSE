@@ -2,5 +2,8 @@ Jstack Minecraft
 Copyright (C) 2020 Burning_TNT <pangyl08@163.com>
 
 All rights reserved, except:
-You can put the links of artifacts on your website.
-You can use a proxy to download artifacts, but, you CANNOT cache the artifacts.
+1. You can put the links of artifacts on your website.
+2. You can use a proxy to download artifacts. Cache operation is permitted, which means you can upload the artifact on mavens/mirrors/any other websites.
+3. You can use the entire repository under MIT license, if ANY situation(s) below is/are matched:
+(1) Your repo is FULLY under GPLv3 license (without additional terms, see GPLv3 Section 7).
+(2) Your project is HMCL itself (https://github.com/HMCL-dev/HMCL) or its valid forks.
